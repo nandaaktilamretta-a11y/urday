@@ -1,0 +1,957 @@
+/* =======================================================
+                        RESET
+======================================================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* =======================================================
+                        BODY
+======================================================= */
+
+body{
+font-family:'Poppins',sans-serif;
+background:
+linear-gradient(
+135deg,
+#ffdce8,
+#ffeef5,
+#fff8fb
+);
+overflow-x:hidden;
+color:#444;
+scroll-behavior:smooth;
+}
+
+/* =======================================================
+                      SCROLLBAR
+======================================================= */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:#ffeaf3;
+}
+
+::-webkit-scrollbar-thumb{
+background:#ff7aa8;
+border-radius:20px;
+}
+
+/* =======================================================
+                    INTRO SCREEN
+======================================================= */
+
+.intro-screen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+z-index:99999;
+animation:introFade 5s forwards;
+}
+
+.intro-overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:
+radial-gradient(
+circle,
+rgba(255,255,255,0.08),
+black
+);
+}
+
+.intro-content{
+text-align:center;
+z-index:2;
+padding:20px;
+}
+
+.intro-small{
+color:#ffc2d8;
+font-size:18px;
+letter-spacing:5px;
+margin-bottom:20px;
+text-transform:uppercase;
+}
+
+.intro-text{
+font-size:70px;
+color:white;
+font-family:'Handlee',cursive;
+margin-bottom:20px;
+animation:introText 4s ease;
+text-shadow:0 10px 30px rgba(255,255,255,0.2);
+}
+
+.intro-subtitle{
+color:#eee;
+font-size:24px;
+}
+
+@keyframes introFade{
+
+0%{
+opacity:1;
+}
+
+80%{
+opacity:1;
+}
+
+100%{
+opacity:0;
+visibility:hidden;
+}
+
+}
+
+@keyframes introText{
+
+0%{
+opacity:0;
+transform:scale(0.8);
+}
+
+50%{
+opacity:1;
+transform:scale(1);
+}
+
+100%{
+opacity:1;
+}
+
+}
+
+/* =======================================================
+                    MUSIC BUTTON
+======================================================= */
+
+.music-btn{
+position:fixed;
+top:20px;
+right:20px;
+width:65px;
+height:65px;
+border-radius:50%;
+background:white;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:28px;
+cursor:pointer;
+z-index:9999;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+transition:0.4s;
+backdrop-filter:blur(10px);
+}
+
+.music-btn:hover{
+transform:scale(1.1) rotate(10deg);
+}
+
+/* =======================================================
+                    CUTE STICKERS
+======================================================= */
+
+.cute-bear{
+position:fixed;
+bottom:20px;
+left:20px;
+font-size:75px;
+z-index:999;
+animation:bearFloat 4s infinite ease-in-out;
+}
+
+@keyframes bearFloat{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+}
+
+.cute-star{
+position:fixed;
+font-size:30px;
+opacity:0.8;
+animation:starFloat 5s infinite ease-in-out;
+z-index:999;
+}
+
+.star1{
+top:15%;
+left:8%;
+}
+
+.star2{
+top:25%;
+right:12%;
+animation-delay:1s;
+}
+
+.star3{
+bottom:20%;
+left:12%;
+animation-delay:2s;
+}
+
+.star4{
+bottom:10%;
+right:8%;
+animation-delay:3s;
+}
+
+@keyframes starFloat{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+}
+
+/* =======================================================
+                      OPENING
+======================================================= */
+
+.opening{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:
+linear-gradient(
+135deg,
+#ff9ec7,
+#ffd5e8,
+#fff0f7
+);
+overflow:auto;
+z-index:9999;
+transition:1.5s;
+padding:20px;
+}
+
+.blur-bg{
+position:absolute;
+width:100%;
+height:100%;
+backdrop-filter:blur(10px);
+background:rgba(255,255,255,0.1);
+}
+
+/* FLOATING */
+
+.floating{
+position:absolute;
+font-size:40px;
+opacity:0.7;
+animation:floating 6s infinite ease-in-out;
+}
+
+.f1{
+top:10%;
+left:10%;
+}
+
+.f2{
+top:20%;
+right:15%;
+animation-delay:1s;
+}
+
+.f3{
+bottom:20%;
+left:15%;
+animation-delay:2s;
+}
+
+.f4{
+bottom:10%;
+right:10%;
+animation-delay:3s;
+}
+
+.f5{
+top:50%;
+left:5%;
+animation-delay:4s;
+}
+
+@keyframes floating{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+}
+
+/* =======================================================
+                      ENVELOPE
+======================================================= */
+
+.envelope{
+width:370px;
+min-height:280px;
+background:white;
+border-radius:35px;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+overflow:hidden;
+box-shadow:0 15px 50px rgba(0,0,0,0.2);
+animation:floatEnvelope 3s infinite ease-in-out;
+cursor:pointer;
+transition:0.5s;
+padding:25px;
+}
+
+.envelope:hover{
+transform:scale(1.05);
+}
+
+.envelope::before{
+content:'';
+position:absolute;
+width:200%;
+height:200%;
+background:
+linear-gradient(
+45deg,
+transparent,
+rgba(255,255,255,0.5),
+transparent
+);
+animation:shine 4s infinite;
+}
+
+@keyframes shine{
+
+0%{
+left:-200%;
+}
+
+100%{
+left:200%;
+}
+
+}
+
+@keyframes floatEnvelope{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+}
+
+.letter{
+text-align:center;
+padding:20px;
+z-index:2;
+}
+
+.mini-text{
+font-size:15px;
+letter-spacing:3px;
+color:#ff7aa8;
+text-transform:uppercase;
+margin-bottom:10px;
+}
+
+.letter h1{
+font-size:60px;
+font-family:'Handlee',cursive;
+color:#ff4f81;
+margin-bottom:15px;
+}
+
+.open-desc{
+font-size:18px;
+color:#777;
+margin-bottom:25px;
+line-height:1.8;
+}
+
+.open-btn{
+padding:16px 38px;
+border:none;
+border-radius:40px;
+background:#ff4f81;
+color:white;
+font-size:18px;
+font-weight:600;
+cursor:pointer;
+transition:0.4s;
+box-shadow:0 10px 25px rgba(255,79,129,0.3);
+}
+
+.open-btn:hover{
+transform:scale(1.08);
+background:#ff2e6f;
+}
+
+/* =======================================================
+                        MAIN
+======================================================= */
+
+.main{
+display:none;
+padding-bottom:100px;
+}
+
+/* =======================================================
+                    HERO SECTION
+======================================================= */
+
+.hero-section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px 20px;
+}
+
+.hero-small{
+font-size:18px;
+letter-spacing:5px;
+text-transform:uppercase;
+color:#ff7aa8;
+margin-bottom:20px;
+}
+
+.main-title{
+font-size:80px;
+font-family:'Handlee',cursive;
+color:#ff4f81;
+margin-bottom:20px;
+text-shadow:0 10px 25px rgba(255,79,129,0.3);
+}
+
+.main-subtitle{
+font-size:24px;
+color:#666;
+}
+
+/* =======================================================
+                    MENU SECTION
+======================================================= */
+
+.menu-section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+gap:40px;
+padding:40px 20px;
+}
+
+.menu-title{
+font-size:65px;
+font-family:'Handlee',cursive;
+color:#ff4f81;
+text-align:center;
+}
+
+.menu-buttons{
+display:flex;
+gap:30px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.menu-btn{
+padding:20px 45px;
+border:none;
+border-radius:45px;
+background:#ff4f81;
+color:white;
+font-size:22px;
+font-weight:600;
+cursor:pointer;
+transition:0.4s;
+box-shadow:0 10px 25px rgba(255,79,129,0.35);
+}
+
+.menu-btn:hover{
+transform:scale(1.08);
+background:#ff2e6f;
+}
+
+/* =======================================================
+                    PHOTO SECTION
+======================================================= */
+
+.photo-section{
+padding:100px 20px;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.photo-header{
+text-align:center;
+margin-bottom:50px;
+}
+
+.photo-small{
+font-size:18px;
+letter-spacing:4px;
+text-transform:uppercase;
+color:#ff7aa8;
+margin-bottom:15px;
+}
+
+.photo-title{
+font-size:60px;
+font-family:'Handlee',cursive;
+color:#ff4f81;
+}
+
+/* =======================================================
+                    SCRAPBOOK
+======================================================= */
+
+.scrapbook{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+max-width:1300px;
+margin-bottom:100px;
+}
+
+.polaroid{
+width:190px;
+background:white;
+padding:12px;
+border-radius:25px;
+position:relative;
+box-shadow:0 10px 35px rgba(0,0,0,0.15);
+transition:0.5s;
+}
+
+.polaroid:hover{
+transform:scale(1.08) rotate(0deg);
+}
+
+.tape{
+position:absolute;
+top:-12px;
+left:50%;
+transform:translateX(-50%) rotate(-3deg);
+width:80px;
+height:25px;
+background:rgba(255,255,255,0.5);
+border-radius:8px;
+backdrop-filter:blur(3px);
+}
+
+.polaroid img{
+width:100%;
+height:240px;
+object-fit:cover;
+border-radius:18px;
+}
+
+.polaroid p{
+margin-top:12px;
+font-size:24px;
+font-family:'Handlee',cursive;
+color:#ff4f81;
+}
+
+/* ROTATION */
+
+.rotate1{transform:rotate(-5deg);}
+.rotate2{transform:rotate(4deg);}
+.rotate3{transform:rotate(-3deg);}
+.rotate4{transform:rotate(5deg);}
+.rotate5{transform:rotate(-4deg);}
+.rotate6{transform:rotate(3deg);}
+.rotate7{transform:rotate(-6deg);}
+.rotate8{transform:rotate(4deg);}
+
+/* =======================================================
+                    FLOWER SECTION
+======================================================= */
+
+.flower-section{
+width:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
+margin-bottom:100px;
+}
+
+.flower-title{
+font-size:60px;
+font-family:'Handlee',cursive;
+color:#ff4f81;
+margin-bottom:40px;
+text-align:center;
+}
+
+.flower-wrapper{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+align-items:center;
+gap:50px;
+}
+
+.chubby-container{
+position:relative;
+}
+
+.chubby-character{
+font-size:95px;
+animation:flowerMove 3s infinite ease-in-out;
+}
+
+@keyframes flowerMove{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+}
+
+.flower-glow{
+position:absolute;
+width:180px;
+height:180px;
+background:
+radial-gradient(
+circle,
+rgba(255,105,180,0.5),
+transparent
+);
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+filter:blur(20px);
+z-index:-1;
+}
+
+.flower-card{
+background:rgba(255,255,255,0.65);
+backdrop-filter:blur(15px);
+padding:35px;
+border-radius:35px;
+max-width:420px;
+box-shadow:0 10px 35px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.flower-card h2{
+font-size:38px;
+color:#ff4f81;
+margin-bottom:20px;
+}
+
+.flower-card p{
+font-size:18px;
+line-height:2;
+color:#666;
+margin-bottom:25px;
+}
+
+.flower-btn{
+padding:15px 35px;
+border:none;
+border-radius:40px;
+background:#ff4f81;
+color:white;
+font-size:17px;
+cursor:pointer;
+transition:0.4s;
+}
+
+.flower-btn:hover{
+transform:scale(1.08);
+}
+
+/* =======================================================
+                    MESSAGE SECTION
+======================================================= */
+
+.message-section{
+width:100%;
+display:flex;
+justify-content:center;
+padding:20px;
+}
+
+.message-box{
+max-width:950px;
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(15px);
+padding:50px;
+border-radius:40px;
+box-shadow:0 10px 35px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.message-small{
+font-size:18px;
+letter-spacing:4px;
+text-transform:uppercase;
+color:#ff7aa8;
+margin-bottom:15px;
+}
+
+.message-title{
+font-size:60px;
+font-family:'Handlee',cursive;
+color:#ff4f81;
+margin-bottom:30px;
+}
+
+#typing{
+font-size:24px;
+line-height:2.3;
+white-space:pre-line;
+color:#555;
+}
+
+/* =======================================================
+                    VIDEO SECTION
+======================================================= */
+
+.video-section{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+background:black;
+padding:0;
+}
+
+.video-player{
+width:100%;
+height:100vh;
+object-fit:contain;
+background:black;
+}
+
+/* =======================================================
+                    FINAL SECTION
+======================================================= */
+
+.final-section{
+padding:100px 20px;
+text-align:center;
+}
+
+.final-hearts{
+font-size:35px;
+margin-bottom:20px;
+}
+
+.final-small{
+font-size:18px;
+letter-spacing:4px;
+text-transform:uppercase;
+color:#ff7aa8;
+margin-bottom:15px;
+}
+
+.final-title{
+font-size:70px;
+font-family:'Handlee',cursive;
+color:#ff4f81;
+margin-bottom:30px;
+}
+
+.final-text{
+font-size:26px;
+line-height:2.3;
+color:#666;
+max-width:900px;
+margin:auto;
+}
+
+.final-photo{
+margin-top:50px;
+}
+
+.final-photo img{
+width:260px;
+height:330px;
+object-fit:cover;
+border-radius:30px;
+border:8px solid white;
+box-shadow:0 10px 35px rgba(0,0,0,0.15);
+}
+
+/* =======================================================
+                    PARTICLES
+======================================================= */
+
+.particle{
+position:fixed;
+font-size:25px;
+opacity:0.7;
+animation:particleFloat 6s infinite ease-in-out;
+pointer-events:none;
+}
+
+.p1{top:15%;left:5%;}
+.p2{top:35%;right:10%;}
+.p3{bottom:20%;left:10%;}
+.p4{bottom:15%;right:5%;}
+.p5{top:50%;left:50%;}
+
+@keyframes particleFloat{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+}
+
+/* =======================================================
+                    FOOTER
+======================================================= */
+
+.footer{
+padding:30px;
+text-align:center;
+color:#777;
+font-size:16px;
+}
+
+/* =======================================================
+                    HEART EFFECT
+======================================================= */
+
+.heart{
+position:fixed;
+top:-10vh;
+pointer-events:none;
+animation:fall linear forwards;
+z-index:99999;
+}
+
+@keyframes fall{
+
+to{
+transform:
+translateY(110vh)
+rotate(360deg);
+
+opacity:0;
+}
+
+}
+
+/* =======================================================
+                    HIDDEN
+======================================================= */
+
+.hidden{
+display:none;
+}
+
+/* =======================================================
+                    MOBILE
+======================================================= */
+
+@media(max-width:768px){
+
+.intro-text{
+font-size:45px;
+}
+
+.main-title,
+.menu-title,
+.photo-title,
+.flower-title,
+.message-title,
+.final-title{
+font-size:42px;
+}
+
+.menu-btn{
+font-size:18px;
+padding:16px 30px;
+}
+
+.polaroid{
+width:150px;
+}
+
+.polaroid img{
+height:190px;
+}
+
+.chubby-character{
+font-size:70px;
+}
+
+.message-box{
+padding:30px;
+}
+
+#typing{
+font-size:18px;
+line-height:2;
+}
+
+.final-text{
+font-size:20px;
+}
+
+.final-photo img{
+width:200px;
+height:270px;
+}
+
+}
