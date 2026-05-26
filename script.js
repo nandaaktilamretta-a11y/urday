@@ -147,12 +147,22 @@ video.currentTime = 0;
 /* AUDIO SETTINGS */
 
 voice.volume = 0.8;
-music.volume = 0.5;
+music.volume = 0.55;
 
-/* PLAY AUDIO */
+/* FORCE PLAY AUDIO */
 
-music.play();
-voice.play();
+Promise.all([
+music.play(),
+voice.play()
+]).then(()=>{
+
+console.log("Audio started");
+
+}).catch((error)=>{
+
+console.log("Autoplay blocked:", error);
+
+});
 
 /* RESET TYPING */
 
